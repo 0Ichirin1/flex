@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-缩写-1-10</title>
+    <style>
+        .box{
+            margin: 50px;
+            width: 500px;
+            height: 200px;
+            background-color: cornflowerblue;
+            display: flex;
+        }
+        /* flex 默认状态 flex-grow:0 flex-shrink:1 flex-basis:auto */
+        /*              多余空间不分配，溢出空间平均分，占用大小，看width设置 */
+        /* flex:1 flex-grow:1 flex-shrink:1 flex-basis:0 */
+        /*       多余空间平均分，溢出空间平均分，占用大小，看width设置 */
+        /* flex:auto flex-grow:1 flex-shrink:1 flex-basis:auto */
+        /*       多余空间平均分，溢出空间平均分，占用大小，看width设置 */
+        /* flex:none flex-grow:0 flex-shrink:0 flex-basis:auto */
+        /*       多余空间不分配， 溢出空间不分配， 占用大小，看width设置 */
+        .item{
+            flex: none;
+            width: 200px;
+            height: 50px;
+        }
+
+        .one{
+            background-color: brown;
+        }
+
+        .two{
+            background-color: goldenrod;
+        }
+
+        .three{
+            background-color: darkolivegreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item one">1</div>
+        <div class="item two">2</div>
+        <div class="item three">3</div>
+    </div>
+</body>
+</html>
