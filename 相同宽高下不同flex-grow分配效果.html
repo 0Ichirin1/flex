@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相同宽高下不同flex-grow分配效果</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            background: skyblue;
+            display: flex;
+            /* flex-direction: column-reverse; */
+            margin-top: calc(25% - 200px);
+            margin-left: calc(50% - 200px);
+            flex-flow: row wrap;
+            /* justify-content: space-around; */
+        }
+
+        .box div{
+            width: 100px;
+            height: 100px;
+            /* flex-grow: 1; */
+            background-color: palegoldenrod;
+            font-size: 20px;
+            border: 1px solid black;
+        }
+
+        /* flex-grow 分配剩余空间，默认为auto，即子项目的原本大小 */
+        /* 剩下的100按2:1:1的比例来大致分配给三个子项目 */
+        /* 149 */
+        .one{
+            flex-grow: 2;
+        }
+
+        /* 125 */
+        .two{
+            flex-grow: 1;
+        }
+
+        /* 125 */
+        .three{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+    </div>
+</body>
+</html>
