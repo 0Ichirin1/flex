@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不同宽高不同flex-shrink</title>
+    <style>
+        .container {
+            display: flex;
+            width: 500px;
+            height: 200px;
+            background-color: #413e3e;
+            text-align: center;
+        }
+
+        .item {
+            height: 100px;
+        }
+
+        .item p {
+            margin: 0;
+        }
+
+        /* flex-shrink: 对溢出空间的处理方式 默认为 1 把需要砍掉的空间等比例分配给每一个子项目 */
+        .a {
+            width: 300px;
+            flex-shrink: 1;
+            background-color: #ff4466;
+        }
+        /* (300*1+150*2+200*3)=1200 */
+        /* 300/1200=0.25 */
+        /* 150*0.25=37.5 */
+
+        .b {
+            width: 150px;
+            flex-shrink: 2;
+            background-color: #42b983;
+        }
+        /* 300/1200=0.25 */
+        /* 150*0.25=37.5 */
+
+        .c {
+            width: 200px;
+            flex-shrink: 3;
+            background-color: #61dafb;
+        }
+        /* 600/1200=0.5 */
+        /* 150*0.5=75 */
+
+        /*  */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item a">
+            <p>A</p>
+            <p> width:300</p>
+            <p>flex-shrink: 1</p>
+        </div>
+        <div class="item b">
+            <p>B</p>
+            <p> width:150</p>
+            <p>flex-shrink: 2</p>
+        </div>
+        <div class="item c">
+            <p>C</p>
+            <p> width:200</p>
+            <p>flex-shrink: 3</p>
+        </div>
+    </div>
+</body>
+
+</html>
