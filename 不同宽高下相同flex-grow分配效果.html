@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不同宽高下相同flex-grow分配效果</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background: skyblue;
+            display: flex;
+            /* flex-direction: column-reverse; */
+            margin-top: calc(25% - 200px);
+            margin-left: calc(50% - 200px);
+            flex-flow: row wrap;
+            /* justify-content: space-around; */
+        }
+
+        .box div {
+            height: 100px;
+            flex-grow: 1;
+            background-color: palegoldenrod;
+            font-size: 20px;
+            border: 1px solid black;
+        }
+
+        /* flex-grow:auto （default）按元素原本大小来分配 */
+        /* flex-grow:1 把400-三个项目之和后剩下的空间进行均匀分配 */
+        /* 83 = 50 +「 33 = {400 - (50+100+150)} / 3 」 */
+        .one {
+            width: 50px;
+        }
+
+        /* 133 = 100 +「 33 = {400 - (50+100+150)} / 3 」*/
+        .two {
+            width: 100px;
+        }
+
+        /* 183 = 150 +「 33 = {400 - (50+100+150)} / 3 」*/
+        .three {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+    </div>
+</body>
+
+</html>
