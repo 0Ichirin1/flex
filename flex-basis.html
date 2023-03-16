@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basis</title>
+    <style>
+        .container {
+            display: flex;
+            width: 500px;
+            height: 200px;
+            background-color: #646060;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* flex-basis 默认值为auto，效果与width类似，设置子项占用空间的分配大小，优先级比 width 高 */
+
+        .a {
+            flex-basis: 200px;
+            background-color: #ff4466;
+        }
+
+        .b {
+            max-width: 50px;
+            flex-basis: 150px;
+            background-color: #42b983;
+        }
+
+        .c {
+            flex-basis: 0;
+            background-color: #61dafb;
+        }
+        .d{
+            background-color: beige;
+        }
+
+        /* 综上所述，max-width/min-width > flex-basis > width */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item a">A</div>
+        <div class="item b">B</div>
+        <div class="item c">C</div>
+        <div class="item d">D</div>
+    </div>
+</body>
+
+</html>
